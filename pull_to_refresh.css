@@ -1,0 +1,111 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    /*Disables pull to refresh and overscroll glow effect. still keeps swipe navigations*/
+    overscroll-behavior-y: contain;
+}
+
+.mobile_app_body{
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        115deg,
+        rgb(0, 174, 255) 20%,
+        rgb(0, 255, 221) 80%
+      );
+}
+
+.mobile_app_body.refresh_loading{
+    filter: blur(1px);
+    touch-action: none;
+    pointer-events: none;
+}
+
+/*refresher css*/
+.refresher{
+    pointer-events: none;
+    --refresh-height-width:50px;
+    background: #fff;
+    width: var(--refresh-height-width);
+    height: var(--refresh-height-width);
+    border-radius: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14) , 0 1px 5px 0 rgba(0, 0, 0, 0.12) , 0 3px 1px -2px rgba(0, 0, 0.2, 1);
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 9;
+    transform:translateY(-100px);
+}
+/*refresher css*/
+
+/*refresher internal css*/
+.loading_bar{
+    width: 4px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.loading_bar.loading_prgrass{
+    animation: loading 1s ease-in-out infinite ;
+}
+
+.loading_bar:nth-child(1){
+    background-color: #3498db;
+    animation-delay: 0;
+}
+
+.loading_bar:nth-child(2){
+    background-color: #c0392b;
+    animation-delay: 0.09s;
+}
+
+.loading_bar:nth-child(3){
+    background-color: #f1c40f;
+    animation-delay: .18s;
+}
+
+.loading_bar:nth-child(4){
+    background-color: #27ae60;
+    animation-delay: .27s;
+}
+
+@keyframes loading{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1,2.2);
+    }
+    40%{
+        transform: scale(1);
+    }
+}
+/*refresher internal css*/
+
+.title{
+    text-align: center;
+    margin: 50px 5px;
+    font-size: 26px;
+    color: white;
+}
+.detail{
+    text-align: center;
+    margin: 100px 5px;
+    font-size: 18px;
+    color: white;
+}
+.content{
+    height: 110vh;
+    width: 100%;
+}
