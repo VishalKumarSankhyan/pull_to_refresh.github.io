@@ -7,15 +7,18 @@
 body{
     /*Disables pull to refresh and overscroll glow effect. still keeps swipe navigations*/
     overscroll-behavior-y: contain;
+    overflow: hidden;
+
 }
 
 .mobile_app_body{
     max-height: 100vh;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 
     background: linear-gradient(
-        115deg,
+        110deg,
         rgb(0, 174, 255) 20%,
         rgb(0, 255, 221) 80%
       );
